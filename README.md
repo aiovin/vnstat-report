@@ -62,7 +62,7 @@ crontab -e
 
 Ежедневный отчет в 12 ночи
 ```
-0 0 * * * /полный/путь/к/скрипту/vnstat-report.sh >> /var/tmp/vnstat-report.log 2>&1
+0 0 * * * /полный/путь/к/скрипту/vnstat-report.sh -daily >> /var/tmp/vnstat-report.log 2>&1
 ```
 
 Еженедельный (В 00:00 каждого понедельника)
@@ -72,7 +72,7 @@ crontab -e
 
 Ежемесячный (В 23:00 в последний день каждого месяца)
 ```
-0 23 28-31 * * [ "$(date +\%d -d tomorrow)" = "01" ] && /полный/путь/к/скрипту/vnstat-report.sh >> /var/tmp/vnstat-report.log 2>&1
+0 23 28-31 * * [ "$(date +\%d -d tomorrow)" = "01" ] && /полный/путь/к/скрипту/vnstat-report.sh -monthly >> /var/tmp/vnstat-report.log 2>&1
 ```
 
 ### Файл логов
